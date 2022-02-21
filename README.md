@@ -11,5 +11,5 @@ Users can view an empty calendars
 
 Users can add ‘events’ to a calendar. 
 
-
+MOCKUP:
 ![Alt text](public/images/Mockup.png?raw=true "Mockup")

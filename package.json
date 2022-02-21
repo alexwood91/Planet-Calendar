@@ -1,0 +1,26 @@
+{
+  "name": "planet-calendar",
+  "version": "1.0.0",
+  "description": "**Planet Calendar Project**",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^9.5.0",
+    "jasmine": "^4.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "jasmine",
+    "test:integration": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexwood91/Planet-Calendar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexwood91/Planet-Calendar/issues"
+  },
+  "homepage": "https://github.com/alexwood91/Planet-Calendar#readme"
+}
