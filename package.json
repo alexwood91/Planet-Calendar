@@ -6,6 +6,8 @@
   "dependencies": {
     "cypress": "^9.4.1",
     "express": "^4.17.3",
+    "handlebars": "^4.7.7",
+    "hbs": "^4.2.0",
     "jasmine": "^4.0.2"
   },
   "scripts": {
@@ -13,6 +15,12 @@
     "test": "npm run test:unit && npm run test:integration",
     "test:unit": "jasmine",
     "test:integration": "cypress run"
+  },
+  "engines": {
+    "node": ">=12.14.1"
+  },
+  "nodemonConfig": {
+    "ext": "js,hbs"
   },
   "repository": {
     "type": "git",
