@@ -2,13 +2,14 @@
   "name": "planet-calendar",
   "version": "1.0.0",
   "description": "**Planet Calendar Project**",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
-    "cypress": "^9.5.0",
+    "cypress": "^9.4.1",
+    "express": "^4.17.3",
     "jasmine": "^4.0.2"
   },
-  "devDependencies": {},
   "scripts": {
+    "start": "node app.js",
     "test": "npm run test:unit && npm run test:integration",
     "test:unit": "jasmine",
     "test:integration": "cypress run"
