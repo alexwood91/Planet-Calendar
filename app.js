@@ -11,8 +11,9 @@ app.listen(port, () => {
 });
 
 var homeRouter = require('./routes/home');
+var calendarRouter = require('./routes/calendar');
 
 // route setup
 app.use('/', homeRouter);
-
+app.use('/calendar', calendarRouter)
 module.exports = app;
