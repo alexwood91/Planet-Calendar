@@ -2,11 +2,17 @@ const express = require('express');
 const app = express();
 const port = 3000;
 var path = require('path');
+const bodyParser = require('body-parser');
 
-
+app.use(bodyParser.json())
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+)
 // view engine setup
 
-app.get('/events/new', function(req, res){
+/*app.get('/events/new', function(req, res){
   res.render('events/new');
 });
 
@@ -17,6 +23,9 @@ app.get('/sessions/new', (req, res) => {
 app.get('calendar', function(req, res){
   res.render('/calendar');
 })
+app.post('/events/new', function(req, res){
+  res.render('events/new');
+})*/
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -33,7 +42,7 @@ var calendarRouter = require('./routes/calendar');
 // var sessionsRouter = require('./routes/sessions');
 // route setup
 app.use('/', homeRouter);
-app.use('/new', eventRouter);
+app.use('/events', eventRouter);
 app.use('/calendar', calendarRouter);
 // app.use('/sessions', sessionsRouter);
 module.exports = app;

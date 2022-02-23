@@ -1,11 +1,11 @@
 <h1>Add a new event! </h1>
-
-<form id="new-event-form" action="/my_calendar" method="post">
+<body>
+<form id="new-event-form" action="/events/new" method="post">
   <label for="eventname">Event name: </label>
   <input id="eventname" type="text" name="eventname" value="">
   <br>
-  <label for="eventinfo">Description: </label>
-  <input id="eventinfo" type="text" name="eventinfo" value="">
+  <label for="description">Description: </label>
+  <input id="description" type="text" name="description" value="">
   <br>
   <label for="startdate">Starts: </label>
   <input id="startdate" type="datetime-local" name="startdate" value="">
@@ -15,3 +15,4 @@
   <input type="submit" value="Submit">
   <br>
 </form>
+</body>
