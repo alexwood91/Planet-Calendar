@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+var path = require('path');
 
 
 // view engine setup
@@ -13,8 +14,13 @@ app.get('/sessions/new', (req, res) => {
   res.render('sessions/new');
 });
 
-app.set('views');
+app.get('calendar', function(req, res){
+  res.render('/calendar');
+})
+
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.listen(port, () => {
@@ -23,11 +29,11 @@ app.listen(port, () => {
 
 var homeRouter = require('./routes/home');
 var eventRouter = require('./routes/events')
+var calendarRouter = require('./routes/calendar');
 // var sessionsRouter = require('./routes/sessions');
 // route setup
 app.use('/', homeRouter);
 app.use('/new', eventRouter);
+app.use('/calendar', calendarRouter);
 // app.use('/sessions', sessionsRouter);
-
-
 module.exports = app;
