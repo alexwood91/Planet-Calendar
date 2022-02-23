@@ -28,7 +28,6 @@ app.listen(port, () => {
 });
 
 var homeRouter = require('./routes/home');
-<<<<<<< HEAD
 var eventRouter = require('./routes/events')
 var calendarRouter = require('./routes/calendar');
 // var sessionsRouter = require('./routes/sessions');
@@ -37,11 +36,4 @@ app.use('/', homeRouter);
 app.use('/new', eventRouter);
 app.use('/calendar', calendarRouter);
 // app.use('/sessions', sessionsRouter);
-=======
-var calendarRouter = require('./routes/calendar');
-
-// route setup
-app.use('/', homeRouter);
-app.use('/calendar', calendarRouter)
->>>>>>> c8b470a4e3df58690e8d827f3dc90d238e664668
 module.exports = app;
