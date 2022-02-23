@@ -30,4 +30,9 @@ app.use('/new', eventRouter);
 // app.use('/sessions', sessionsRouter);
 
 
+var calendarRouter = require('./routes/calendar');
+
+// route setup
+app.use('/', homeRouter);
+app.use('/calendar', calendarRouter)
 module.exports = app;
