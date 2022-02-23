@@ -12,7 +12,7 @@ app.use(
 )
 // view engine setup
 
-app.get('/events/new', function(req, res){
+/*app.get('/events/new', function(req, res){
   res.render('events/new');
 });
 
@@ -25,7 +25,7 @@ app.get('calendar', function(req, res){
 })
 app.post('/events/new', function(req, res){
   res.render('events/new');
-})
+})*/
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -42,7 +42,7 @@ var calendarRouter = require('./routes/calendar');
 // var sessionsRouter = require('./routes/sessions');
 // route setup
 app.use('/', homeRouter);
-app.use('/new', eventRouter);
+app.use('/events', eventRouter);
 app.use('/calendar', calendarRouter);
 // app.use('/sessions', sessionsRouter);
 module.exports = app;

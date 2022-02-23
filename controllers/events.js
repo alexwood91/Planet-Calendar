@@ -4,16 +4,16 @@ var EventsController = {
   New: function(req, res) {
     res.render('events/new');
   },
-  Create:(function(req, res) {
-var event = new Event({
-  eventname: req.body.eventname,
-  description: req.body.description,
-  startdate: req.body.startdate,
-  enddate: req.body.enddate, 
-   });
-   console.log('hello')
-   event.save(function(err){})
- }),
+  Create: function(req, res) {
+    var event = new Event(
+      this.eventname = req.body.eventname,
+    this.description = req.body.description,
+    this.startdate = req.body.startdate,
+    this.enddate = req.body.enddate
+    );
+    console.log('hello')
+    event.save()
+  },
 }
 
 

@@ -1,4 +1,11 @@
 const { Pool } = require('pg')
+const pool = new Pool({
+  user: 'rosie.waite',
+  host: 'localhost',
+  database: 'planet',
+  password: 'password',
+  port: 5432
+})
 
 class Event {
   constructor(eventname, description, startdate, enddate ){
@@ -8,14 +15,8 @@ class Event {
     this.enddate = enddate
   }
   save(){
-    const pool = new Pool({
-      user: 'rosie.waite',
-      host: 'localhost',
-      database: 'planet',
-      password: 'password',
-      port: 5432,
-    })
-    pool.query('INSERT INTO events (eventname, description, startdate, enddate) VALUES ($1, $2, $3, $4)', [this.eventname, this.description, this.startdate, this.enddate])
+  pool.connect()
+    pool.query('INSERT INTO events (eventname, description, startdate, enddate) VALUES ($1, $2, $3, $4);', [this.eventname, this.description, this.startdate, this.enddate])
   }
 }
 
