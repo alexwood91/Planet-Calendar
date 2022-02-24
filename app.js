@@ -12,20 +12,23 @@ app.use(
 )
 // view engine setup
 
-/*app.get('/events/new', function(req, res){
-  res.render('events/new');
-});
+// app.get('/events/new', function(req, res){
+//   res.render('events/new');
+// });
 
-app.get('/sessions/new', (req, res) => {
-  res.render('sessions/new');
-});
+// app.get('/sessions/new', (req, res) => {
+//   res.render('sessions/new');
+// });
 
-app.get('calendar', function(req, res){
-  res.render('/calendar');
-})
-app.post('/events/new', function(req, res){
-  res.render('events/new');
-})*/
+// app.get('calendar', function(req, res){
+//   res.render('/calendar');
+// })
+// app.post('/events/new', function(req, res){
+//   res.render('events/new');
+// })
+// app.post('/', function(req, res){
+//   res.render('/');
+// })
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
