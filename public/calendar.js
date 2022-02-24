@@ -37,7 +37,7 @@ function initCalendar(){
 
     if (i > padDays) {
       daySquare.innerText = i - padDays;
-      daySquare.addEventListener('click', () => console.log('click'));
+      daySquare.addEventListener('click', () => daySquare.classList.add('clicked'));
     } else {
       daySquare.classList.add('padding')
     }
