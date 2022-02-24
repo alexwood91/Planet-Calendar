@@ -15,7 +15,6 @@ class User {
     this.password = password
     this.nickname = nickname
     this.dob = dob
-
   }
   save(){
   pool.connect()
