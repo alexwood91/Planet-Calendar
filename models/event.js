@@ -1,6 +1,6 @@
 const { Pool } = require('pg')
 const pool = new Pool({
-  user: 'rosie.waite',
+  user: 'alex.wood',
   host: 'localhost',
   database: 'planet',
   password: 'password',
@@ -20,7 +20,11 @@ class Event {
   }
   list(){
   pool.connect()
-    pool.query('SELECT startdate FROM events')
+  //newList = []
+  pool.query('SELECT startdate FROM events').then(function(result){
+    console.log(result)
+  })
+  //newList.push(x)
   }
 }
 

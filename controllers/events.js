@@ -1,4 +1,5 @@
 const Event = require('../models/event')
+const List = require('../models/list')
 
 var EventsController = {
   New: function(req, res) {
@@ -13,17 +14,8 @@ var EventsController = {
     );
     console.log('hello')
     event.save()
-    events = []
-   var list =  event.list()
-    events.push(list)
-    console.log(events)
+    event.list()
   },
-
-  /*List: function (req, res) {
-    var events = Event.list()
-    console.log(events)
-    
-  }*/
 }
 
 
