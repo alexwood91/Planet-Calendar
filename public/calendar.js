@@ -1,10 +1,11 @@
 let nav = 0;
 let clicked = null;
-
+var events = 'events'
 const calendar = document.getElementById('calendar')
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
 function initCalendar(){
+  console.log(events)
   const date = new Date();
 
   if (nav !== 0) {
@@ -57,4 +58,4 @@ function initButtons(){
   });
 }
 initButtons();
-initCalendar();
+/*initCalendar();*/

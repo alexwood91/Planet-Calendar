@@ -4,8 +4,8 @@ var CalendarController = {
   Index: function(req, res) {
     newEvent = new Event()
     newEvent.list()
-
-    res.render('calendar', { title: 'Planet' });
+    someString = 'these are some words'
+    res.render('calendar', { title: 'Planet' , eventslist: someString});
   }
 };
 
