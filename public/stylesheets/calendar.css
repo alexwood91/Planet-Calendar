@@ -2,6 +2,7 @@ body {
   display: flex;
   margin-top: 50px;
   justify-content: center;
+  background-image: url("https://www.sdxcentral.com/wp-content/uploads/2022/02/nebula.jpg");
   background-color: #320d3e;
   font-family: Verdana, sans-serif;
 }
@@ -17,6 +18,8 @@ body {
 
 #container {
   border-radius: 5%;
+  border-style: solid;
+  border-color: #320d3e;
   background-color: bisque;
   width: 770px;
 }
@@ -57,6 +60,12 @@ body {
 }
 .day:hover {
   background-color: #9e7eb5;
+}
+
+.clicked {
+  cursor: default !important;
+  background-color: #220635 !important;
+  box-shadow: none !important;
 }
 
 .padding {
