@@ -13,7 +13,17 @@ var EventsController = {
     );
     console.log('hello')
     event.save()
+    events = []
+   var list =  event.list()
+    events.push(list)
+    console.log(events)
   },
+
+  /*List: function (req, res) {
+    var events = Event.list()
+    console.log(events)
+    
+  }*/
 }
 
 
