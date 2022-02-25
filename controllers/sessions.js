@@ -14,15 +14,12 @@ var SessionsController = {
   },
 
   Create: function(req, res) {
-    console.log('trying to log in')
     var email = req.body.email; 
     var password = req.body.password;
 
     User.find(email).then(
       (users) => {
       if (users.password != password) {
-        console.log(users)
-        console.log(password)
         console.log('incorrect username or password');
         res.render('sessions/new');
       } else {
