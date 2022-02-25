@@ -1,6 +1,45 @@
-// var SessionsController = {
-//   New: function(req, res) {
-//     res.render('sessions/new', {});
-//   },
-// }
+var User = require('../models/user');
+const { Pool } = require('pg')
+const pool = new Pool({
+  user: 'jackie.benn',
+  host: 'localhost',
+  database: 'planet',
+  password: 'password',
+  port: 5432
+})
 
+var SessionsController = {
+  New: function(req, res) {
+    res.render('sessions/new');
+  },
+
+  Create: function(req, res) {
+    console.log('trying to log in')
+    var email = req.body.email; 
+    var password = req.body.password;
+
+    User.find(email).then(
+      (users) => {
+      if (users.password != password) {
+        console.log(users)
+        console.log(password)
+        console.log('incorrect username or password');
+        res.render('sessions/new');
+      } else {
+        console.log('logged in?')
+        req.session.user = users;
+        res.render('calendar');
+      }
+    })
+  },
+
+  Destroy: function(req, res) {
+    console.log('logging out')
+    if (req.session.user && req.cookies.user_sid) { 
+      res.clearCookie('user_sid');
+    }
+    res.redirect('/users/new');
+  }
+};
+
+module.exports = SessionsController;
