@@ -42,10 +42,12 @@ app.listen(port, () => {
 var homeRouter = require('./routes/home');
 var eventRouter = require('./routes/events')
 var calendarRouter = require('./routes/calendar');
+var apiRouter = require('./routes/api');
 // var sessionsRouter = require('./routes/sessions');
 // route setup
 app.use('/', homeRouter);
 app.use('/events', eventRouter);
 app.use('/calendar', calendarRouter);
+app.use('/api', apiRouter);
 // app.use('/sessions', sessionsRouter);
 module.exports = app;

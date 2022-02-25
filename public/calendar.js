@@ -1,10 +1,29 @@
 let nav = 0;
 let clicked = null;
+let eventDays = []
+array = []
 
 const calendar = document.getElementById('calendar')
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
 function initCalendar(){
+  fetch('/api/events').then(function(response) {
+    return response.json();
+  }).then(function(json) {
+    var datepair = json.events.rows;
+    //console.log(datepair)
+    eventDays.push.apply(eventDays, datepair);
+
+    var result = Object.keys(eventDays).map((key) => [Date(key), eventDays[key]]);
+
+console.log(result);
+
+  
+    fixeddates = eventDays.map( dateString => new Date(dateString));
+  
+  });
+
+
   const date = new Date();
 
   if (nav !== 0) {
