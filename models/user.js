@@ -21,6 +21,13 @@ class User {
   pool.connect()
     pool.query('INSERT INTO users (firstname, surname, email, password, nickname, dob) VALUES ($1, $2, $3, $4, $5, $6);', [this.firstname, this.surname, this.email, this.password, this.nickname, this.dob])
   }
+
+  static find(email){s
+    pool.connect()
+      return pool.query('SELECT email, password FROM users WHERE email = email LIMIT 1;').then(function(result) {
+        return result.rows[0]
+      })
+  }
 }
 
 module.exports = User
