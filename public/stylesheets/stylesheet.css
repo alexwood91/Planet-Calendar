@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  background-image: url("https://www.sdxcentral.com/wp-content/uploads/2022/02/nebula.jpg");
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  background-color: #320d3e;
+  font-family: Verdana, sans-serif;
+  color: rgb(29, 11, 129);ß
+}
+
+#container {
+  border-radius: 5%;
+  padding: 15px;
+  border-style: solid;
+  border-color: #320d3e;
+  background-color: rgba(209, 196, 255, 0.5);
+  width: 500px;
+  height: 600px
+}
+
+form {
+  color: white;
+  padding: 5px;
+}
+
+input {
+  width: 100%;
+  background-color: rgba(236, 162, 222, 0.76);
+  padding: 5px;
+}
+<calendar>{
+  background: rgb(202, 11, 11);
+  border: 1px solid #555;
+  color: #EEE;
+}
