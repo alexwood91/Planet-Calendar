@@ -1,16 +1,26 @@
+<!DOCTYPE html>
+<div id="container">
 <h1>Welcome to {{title}}!</h1>
-
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
 <p>Please sign up below:</p>
-
 <body>
 <form id="new-user-form" action="/" method="post">
 <input id="firstname" type="text" name="firstname" placeholder="Name:" /><br>
+<br>
 <input id="surname" type="text" name="surname" placeholder="Surname:" /><br>
+<br>
   <input id="email" type="text" name="email" placeholder="E-Mail:" /><br>
+  <br>
   <input id="password" type="password" name="password" placeholder="Password:" /><br>
+  <br>
   <input id="nickname" type="text" name="nickname" placeholder="Nickname" /><br>
+  <br>
   <input id="dob" type="date" name="dob" placeholder="Date of Birth" /><br>
   <br><br>
-  <input type="submit" value="submit" /><br>
+  <input style="padding: 6px;  font:small-caps; background-color: #d056db; border-radius: 8px;" type="submit" value="Sign up!" /><br>
 </form>
 </body>
+</div>
+</html>
