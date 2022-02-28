@@ -35,7 +35,7 @@ var SessionsController = {
     if (req.session.user && req.cookies.user_sid) { 
       res.clearCookie('user_sid');
     }
-    res.redirect('/users/new');
+    res.redirect('/home/index');
   }
 };
 
