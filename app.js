@@ -65,8 +65,9 @@ app.listen(port, () => {
 var homeRouter = require('./routes/home');
 var eventRouter = require('./routes/events')
 var calendarRouter = require('./routes/calendar');
+var apiRouter = require('./routes/api');
+app.use('/api', apiRouter);
 var sessionsRouter = require('./routes/sessions');
-
 // route setup
 app.use('/', sessionChecker, homeRouter);
 app.use('/events', sessionChecker, eventRouter);
