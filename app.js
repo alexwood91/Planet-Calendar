@@ -48,10 +48,6 @@ var sessionChecker = (req, res, next) => {
   }
 };
 
-// app.get('/users/new', function(req, res){
-//     res.render('users/new');
-//   });
-
 // view engine setup
 
 app.set('views', path.join(__dirname, 'views'));
