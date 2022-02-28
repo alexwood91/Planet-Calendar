@@ -2,7 +2,7 @@ const User = require('../models/user')
 
 var HomeController = {
   Index: function(req, res) {
-    res.render('home/index', { title: 'Planet' });
+    res.render('home/index', { title: 'Planet', layout: '/layout' });
   },
   Create: function(req, res) {
     var user = new User(

@@ -38,7 +38,7 @@ app.use((req, res, next) => {
 
 var sessionChecker = (req, res, next) => {
   if (req.originalUrl == '/calendar' && !req.session.user && !req.cookies.user_sid) {  // post session checker
-      res.redirect('/users/new');
+      res.redirect('/sessions/new');
   } else if (req.originalUrl == '/' && (req.session.user || req.cookies.user_sid)) {  // home session checker
       res.redirect('/calendar');
   // } else if (req.originalUrl == '/users/profile' && !req.session.user && !req.cookies.user_sid) {  // post session checker
