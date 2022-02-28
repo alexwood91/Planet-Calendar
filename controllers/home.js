@@ -15,6 +15,8 @@ var HomeController = {
     );
     console.log('hello')
     user.save()
+
+    res.status(201).redirect('/calendar');
   },
 }
 

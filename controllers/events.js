@@ -13,10 +13,9 @@ var EventsController = {
     );
     console.log('hello')
     event.save()
+
+    res.status(201).redirect('/calendar');
   },
 }
-
-
-
     
 module.exports = EventsController;
