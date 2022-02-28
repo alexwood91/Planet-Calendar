@@ -10,7 +10,7 @@ const pool = new Pool({
 
 var SessionsController = {
   New: function(req, res) {
-    res.render('sessions/new');
+    res.render('sessions/new', { layout: '/layoutLogInPage' });
   },
 
   Create: function(req, res) {
@@ -25,7 +25,7 @@ var SessionsController = {
       } else {
         console.log('logged in?')
         req.session.user = users;
-        res.render('calendar');
+        res.render('calendar', { layout: '/layoutCalendarPage' });
       }
     })
   },
