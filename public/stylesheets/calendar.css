@@ -73,3 +73,9 @@ body {
   background-color: #c9a3e4 !important;
   box-shadow: none !important;
 }
+
+.event {
+  cursor: default !important;
+  background-color: #d20e12 !important;
+  box-shadow: none !important;
+}
