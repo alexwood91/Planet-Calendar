@@ -1,6 +1,11 @@
+const Event = require('../models/event')
+
 var CalendarController = {
   Index: function(req, res) {
-    res.render('calendar', { title: 'Planet' });
+    newEvent = new Event()
+    newEvent.list()
+    someString = 'these are some words'
+    res.render('calendar', { title: 'Planet' , eventslist: someString});
   }
 };
 

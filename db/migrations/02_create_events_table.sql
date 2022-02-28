@@ -1,1 +1,1 @@
-CREATE TABLE events(id SERIAL PRIMARY KEY, eventname VARCHAR(100), description VARCHAR(500), startdate TIMESTAMP, enddate TIMESTAMP);
+CREATE TABLE events(id SERIAL PRIMARY KEY, eventname VARCHAR(100), description VARCHAR(500), startdate DATE, enddate DATE);
