@@ -1,4 +1,9 @@
+<!DOCTYPE html>
+<div id="container">
 <h1>Add a new event! </h1>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
 <body>
 <form id="new-event-form" action="/events/new" method="post">
   <label for="eventname">Event name: </label>
@@ -8,11 +13,15 @@
   <input id="description" type="text" name="description" value="">
   <br>
   <label for="startdate">Starts: </label>
-  <input id="startdate" type="datetime-local" name="startdate" value="">
+  <input id="startdate" type="date" name="startdate" value="">
   <br>
   <label for="enddate">Ends: </label>
-  <input id="enddate" type="datetime-local" name="enddate" value="">
-  <input type="submit" value="Submit">
+  <input id="enddate" type="date" name="enddate" value="">
+  <br><br>
+  <input style="padding: 6px; font:small-caps; background-color: #d056db; border-radius: 8px;" 
+  type="submit" value="Add Event">
   <br>
 </form>
 </body>
+</div>
+</html>

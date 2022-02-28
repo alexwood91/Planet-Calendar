@@ -1,4 +1,5 @@
 const Event = require('../models/event')
+const List = require('../models/list')
 
 var EventsController = {
   New: function(req, res) {
@@ -13,10 +14,8 @@ var EventsController = {
     );
     console.log('hello')
     event.save()
+    res.status(201).redirect('/calendar');
   },
 }
-
-
-
     
 module.exports = EventsController;

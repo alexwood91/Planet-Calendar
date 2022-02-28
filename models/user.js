@@ -1,6 +1,6 @@
 const { Pool } = require('pg')
 const pool = new Pool({
-  user: 'jackie.benn',
+  user: 'rosie.waite',
   host: 'localhost',
   database: 'planet',
   password: 'password',
@@ -15,11 +15,17 @@ class User {
     this.password = password
     this.nickname = nickname
     this.dob = dob
-
   }
   save(){
   pool.connect()
     pool.query('INSERT INTO users (firstname, surname, email, password, nickname, dob) VALUES ($1, $2, $3, $4, $5, $6);', [this.firstname, this.surname, this.email, this.password, this.nickname, this.dob])
+  }
+
+  static find(email){
+    pool.connect()
+      return pool.query('SELECT email, password FROM users WHERE email = email LIMIT 1;').then(function(result) {
+        return result.rows[0]
+      })
   }
 }
 
