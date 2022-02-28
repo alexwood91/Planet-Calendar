@@ -34,8 +34,3 @@ input {
   background-color: rgba(236, 162, 222, 0.76);
   padding: 5px;
 }
-<calendar>{
-  background: rgb(202, 11, 11);
-  border: 1px solid #555;
-  color: #EEE;
-}

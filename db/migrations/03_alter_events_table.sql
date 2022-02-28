@@ -1,0 +1,1 @@
+ALTER TABLE events ADD private BOOLEAN DEFAULT false;
