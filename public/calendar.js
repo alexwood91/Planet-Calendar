@@ -43,22 +43,27 @@ function initCalendar(){
     const daySquare = document.createElement('div');
     daySquare.classList.add('day');
 
-    const dayString = `${year}-0${month + 1}-${i - padDays}`;
+    const n = i - padDays
+    const twoDigDay = ("0" + (date.getDate() + n - 1)).slice(-2)
+    const twoDigMonth = ("0" + (date.getMonth() + 1)).slice(-2)
+
+    const dayString = `${year}-${twoDigMonth}-${twoDigDay}`;
     console.log(dayString)
     const eventString = JSON.stringify(eventDays)
     const eventForDay = eventString.includes(dayString)
     console.log(eventForDay)
 
+
     if (i > padDays) {
       daySquare.innerText = i - padDays;
       daySquare.addEventListener('click', () => daySquare.classList.add('clicked'));
-    } else {
+    } if (eventForDay) {
+      daySquare.classList.add('event')
+    }    
+    else {
       daySquare.classList.add('padding')
     }
 
-    if (eventForDay) {
-      daySquare.classList.add('event')
-    }
 
     calendar.appendChild(daySquare);
   }

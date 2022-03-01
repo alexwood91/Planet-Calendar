@@ -3,6 +3,10 @@
   background-color: rgb(156, 47, 203);
   overflow: hidden;
   font-family: Verdana, sans-serif;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 .navbar a {
   float: left;
@@ -91,7 +95,7 @@ body {
   height: 100vh;
   background-color: #320d3e;
   font-family: Verdana, sans-serif;
-  color: rgb(29, 11, 129);ß
+  color: rgb(29, 11, 129);
 }
 
 #container {
