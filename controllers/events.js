@@ -10,7 +10,8 @@ var EventsController = {
       this.eventname = req.body.eventname,
     this.description = req.body.description,
     this.startdate = req.body.startdate,
-    this.enddate = req.body.enddate
+    this.enddate = req.body.enddate,
+    this.privateevent = req.body.privateevent
     );
     console.log('hello')
     event.save()

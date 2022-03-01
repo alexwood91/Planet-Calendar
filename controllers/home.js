@@ -11,7 +11,8 @@ var HomeController = {
     this.email = req.body.email,
     this.password = req.body.password,
     this.nickname = req.body.nickname,
-    this.dob = req.body.dob
+    this.dob = req.body.dob,
+    this.galaxies = req.body.galaxies
     );
     console.log('hello')
     user.save()
