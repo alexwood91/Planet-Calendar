@@ -70,3 +70,10 @@ app.use('/events', sessionChecker, eventRouter);
 app.use('/calendar', sessionChecker, calendarRouter);
 app.use('/sessions', sessionsRouter);
 module.exports = app;
+
+// // create avatars
+// app.post('/calendar', (req, res)=> {
+//   let name = firstname.req.body;
+//   let avatar = `https://avatars.dicebear.com/api/initials/${name}.svg`
+//   return res.json(avatar)
+// })

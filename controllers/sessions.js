@@ -23,9 +23,9 @@ var SessionsController = {
         console.log('incorrect username or password');
         res.render('sessions/new');
       } else {
-        console.log('logged in?')
         req.session.user = users;
-        res.render('calendar', { layout: '/layoutCalendarPage' });
+        console.log(users.email)
+        res.render('calendar', { layout: '/layoutCalendarPage', avatar: users.email });
       }
     })
   },
