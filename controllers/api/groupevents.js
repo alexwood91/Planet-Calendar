@@ -6,11 +6,9 @@ const pool = new Pool({
   password: 'password',
   port: 5432
 })
-
-
-var EventsApi = {
+var GroupEventsApi = {
   Index: function(req, res) {
-    const sql = `SELECT startdate FROM events WHERE eventuser = '${req.session.user.id}'`
+    const sql = `SELECT startdate FROM events WHERE eventgalaxies = '${req.session.user.galaxies}'`
     pool.connect()
     pool.query(sql, function(err, result) {
       if (err) { throw err; }
@@ -19,4 +17,4 @@ var EventsApi = {
   }
 };
 
-module.exports = EventsApi;
+module.exports = GroupEventsApi;

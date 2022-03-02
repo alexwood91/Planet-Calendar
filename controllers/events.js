@@ -11,7 +11,8 @@ var EventsController = {
     this.startdate = req.body.startdate,
     this.enddate = req.body.enddate,
     this.privateevent = req.body.privateevent,
-    this.eventuser = req.session.user.id
+    this.eventuser = req.session.user.id,
+    this.eventgalaxies = req.session.user.galaxies
     );
     event.save()
     res.status(201).redirect('/calendar');

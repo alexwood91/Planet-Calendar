@@ -62,11 +62,13 @@ var homeRouter = require('./routes/home');
 var eventRouter = require('./routes/events')
 var calendarRouter = require('./routes/calendar');
 var apiRouter = require('./routes/api');
+var groupApiRouter = require('./routes/groupApi');
 app.use('/api', apiRouter);
+app.use('/groupApi', groupApiRouter)
 var sessionsRouter = require('./routes/sessions');
 // route setup
 app.use('/', sessionChecker, homeRouter);
 app.use('/events', sessionChecker, eventRouter);
-app.use('/calendar', sessionChecker, calendarRouter, apiRouter);
+app.use('/calendar', sessionChecker, calendarRouter, apiRouter, groupApiRouter );
 app.use('/sessions', sessionsRouter);
 module.exports = app;
