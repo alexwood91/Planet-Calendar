@@ -7,7 +7,8 @@ const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
 function initCalendar(){
   fetch('/api/events').then(function(response) {
     return response.json();
-  }).then(function(json) {
+  }).then(function(json) { 
+    console.log(json)
     var datepair = json.events.rows;
     eventDays.push.apply(eventDays, datepair);
     render();
@@ -44,7 +45,7 @@ function initCalendar(){
     daySquare.classList.add('day');
 
     const n = i - padDays
-    const twoDigDay = ("0" + (date.getDate() + n - 1)).slice(-2)
+    const twoDigDay = ("0" + (date.getDate() + n - 2)).slice(-2)
     const twoDigMonth = ("0" + (date.getMonth() + 1)).slice(-2)
 
     const dayString = `${year}-${twoDigMonth}-${twoDigDay}`;
