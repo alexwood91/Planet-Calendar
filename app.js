@@ -7,7 +7,6 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
 
-
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -70,3 +69,10 @@ app.use('/events', sessionChecker, eventRouter);
 app.use('/calendar', sessionChecker, calendarRouter, apiRouter);
 app.use('/sessions', sessionsRouter);
 module.exports = app;
+
+// // create avatars
+// app.post('/calendar', (req, res)=> {
+//   let name = firstname.req.body;
+//   let avatar = `https://avatars.dicebear.com/api/initials/${name}.svg`
+//   return res.json(avatar)
+// })

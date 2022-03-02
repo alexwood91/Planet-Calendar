@@ -24,7 +24,7 @@ class User {
 
   static find(email){
     pool.connect()
-      return pool.query(`SELECT id, email, password FROM users WHERE email = '${email}';`).then(function(result) {
+      return pool.query(`SELECT id, email, password, nickname FROM users WHERE email = '${email}';`).then(function(result) {
         return result.rows[0]
 
       })

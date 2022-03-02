@@ -4,6 +4,8 @@
   "description": "**Planet Calendar Project**",
   "main": "app.js",
   "dependencies": {
+    "@dicebear/avatars": "^4.10.2",
+    "@dicebear/avatars-initials-sprites": "^4.10.2",
     "cookie-parser": "^1.4.6",
     "cypress": "^9.4.1",
     "express": "^4.17.3",

@@ -28,7 +28,7 @@ var SessionsController = {
         req.session.save()
         req.session.user = user;
         console.log(user)
-        res.render('calendar', { layout: '/layoutCalendarPage' });
+        res.render('calendar', { layout: '/layoutCalendarPage', avatar: users.nickname });
       }
     })
   },

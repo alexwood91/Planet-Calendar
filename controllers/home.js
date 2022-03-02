@@ -19,6 +19,5 @@ var HomeController = {
 
     res.status(201).redirect('/calendar');
   },
-}
 
 module.exports = HomeController;
