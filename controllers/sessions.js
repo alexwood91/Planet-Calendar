@@ -1,6 +1,7 @@
 var User = require('../models/user');
 const { Pool } = require('pg')
 const pool = new Pool({
+
   user: 'rosie.waite',
   host: 'localhost',
   database: 'planet',
