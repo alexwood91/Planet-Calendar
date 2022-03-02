@@ -9,25 +9,20 @@ const pool = new Pool({
 })
 
 class Event {
-  constructor(eventname, description, startdate, enddate, privateevent ){
+  constructor(eventname, description, startdate, enddate, privateevent, eventuser ){
     this.eventname = eventname
     this.description = description
     this.startdate = startdate
     this.enddate = enddate
     this.privateevent = privateevent
-
+    this.eventuser = eventuser
   }
   save(){
   pool.connect()
-    pool.query('INSERT INTO events (eventname, description, startdate, enddate, private ) VALUES ($1, $2, $3, $4, $5);', [this.eventname, this.description, this.startdate, this.enddate, this.privateevent])
+    pool.query('INSERT INTO events (eventname, description, startdate, enddate, private, eventuser ) VALUES ($1, $2, $3, $4, $5, $6);', [this.eventname, this.description, this.startdate, this.enddate, this.privateevent, this.eventuser])
   }
   list(){
   pool.connect()
-  //newList = []
-  /*pool.query('SELECT startdate FROM events').then(function(result){
-    console.log(result)
-  })*/
-  //newList.push(x)
   }
 }
 
