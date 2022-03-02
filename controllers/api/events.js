@@ -7,10 +7,10 @@ const pool = new Pool({
   port: 5432
 })
 
-const sql = 'SELECT startdate FROM events'
 
 var EventsApi = {
   Index: function(req, res) {
+    const sql = `SELECT startdate FROM events where eventuser = '${req.session.user.id}'`
     pool.connect()
     pool.query(sql, function(err, result) {
       if (err) { throw err; }
