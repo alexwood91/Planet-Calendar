@@ -23,18 +23,10 @@ class User {
 
   static find(email){
     pool.connect()
-      return pool.query('SELECT email, password FROM users WHERE email = email LIMIT 1;').then(function(result) {
+      return pool.query('SELECT email, password, nickname FROM users WHERE email = email LIMIT 1;').then(function(result) {
         return result.rows[0]
       })
   }
-
-  static findNickname(email){
-    pool.connect()
-      return pool.query('SELECT email, nickname FROM users WHERE email = `${email}`;').then(function(result) {
-        return result.rows[0]
-      })
-  }
-
 }
 
 module.exports = User

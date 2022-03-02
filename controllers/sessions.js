@@ -24,8 +24,8 @@ var SessionsController = {
         res.render('sessions/new');
       } else {
         req.session.user = users;
-        console.log(users.email)
-        res.render('calendar', { layout: '/layoutCalendarPage', avatar: users.email });
+        console.log(users.nickname)
+        res.render('calendar', { layout: '/layoutCalendarPage', avatar: users.nickname });
       }
     })
   },

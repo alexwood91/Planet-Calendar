@@ -7,7 +7,6 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
 
-
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
