@@ -67,6 +67,6 @@ var sessionsRouter = require('./routes/sessions');
 // route setup
 app.use('/', sessionChecker, homeRouter);
 app.use('/events', sessionChecker, eventRouter);
-app.use('/calendar', sessionChecker, calendarRouter);
+app.use('/calendar', sessionChecker, calendarRouter, apiRouter);
 app.use('/sessions', sessionsRouter);
 module.exports = app;
