@@ -7,6 +7,10 @@
   top: 0;
   left: 0;
   font-family: Verdana, sans-serif;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 .navbar a {
   float: left;

@@ -6,6 +6,6 @@ var SessionsController = require('../controllers/sessions');
 
 router.get('/new', SessionsController.New);
 router.post('/', SessionsController.Create);
-router.delete('/', SessionsController.Destroy);
+router.get('/', SessionsController.Destroy);
 
 module.exports = router;

@@ -7,8 +7,7 @@ const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
 function initCalendar(){
   fetch('/api/events').then(function(response) {
     return response.json();
-  }).then(function(json) { 
-    console.log(json)
+  }).then(function(json) {
     var datepair = json.events.rows;
     eventDays.push.apply(eventDays, datepair);
     render();
@@ -44,27 +43,22 @@ function initCalendar(){
     const daySquare = document.createElement('div');
     daySquare.classList.add('day');
 
-    const n = i - padDays
-    const twoDigDay = ("0" + (date.getDate() + n - 2)).slice(-2)
-    const twoDigMonth = ("0" + (date.getMonth() + 1)).slice(-2)
-
-    const dayString = `${year}-${twoDigMonth}-${twoDigDay}`;
+    const dayString = `${year}-0${month + 1}-${i - padDays}`;
     console.log(dayString)
     const eventString = JSON.stringify(eventDays)
     const eventForDay = eventString.includes(dayString)
     console.log(eventForDay)
 
-
     if (i > padDays) {
       daySquare.innerText = i - padDays;
       daySquare.addEventListener('click', () => daySquare.classList.add('clicked'));
-    } if (eventForDay) {
-      daySquare.classList.add('event')
-    }    
-    else {
+    } else {
       daySquare.classList.add('padding')
     }
 
+    if (eventForDay) {
+      daySquare.classList.add('event')
+    }
 
     calendar.appendChild(daySquare);
   }
@@ -82,4 +76,3 @@ function initButtons(){
   });
 }
 initButtons();
-/*initCalendar();*/

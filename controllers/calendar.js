@@ -4,8 +4,14 @@ var CalendarController = {
   Index: function(req, res) {
     newEvent = new Event()
     newEvent.list()
-    someString = 'these are some words'   
+    someString = 'these are some words'
     res.render('calendar', { title: 'Planet' , eventslist: someString, layout: '/layoutCalendarPage' });
+  },
+  Groupcal: function(req, res) {
+    newEvent = new Event()
+    newEvent.list()
+    someString = 'these are some words'
+    res.render('groupcal', { title: 'Planet' , eventslist: someString, layout: '/layoutCalendarPage' });
   }
 };
 
