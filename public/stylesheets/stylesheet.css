@@ -1,7 +1,11 @@
 /* Navigation bar formatting */
 .navbar {
-  background-color: rgb(156, 47, 203);
+  background-color: #b135b187;
   overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
   font-family: Verdana, sans-serif;
   position: fixed;
   width: 100%;

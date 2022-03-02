@@ -11,7 +11,7 @@ const pool = new Pool({
 
 var SessionsController = {
   New: function(req, res) {
-    res.render('sessions/new');
+    res.render('sessions/new', { layout: '/layoutLogInPage' });
   },
 
   Create: function(req, res) {
@@ -24,10 +24,11 @@ var SessionsController = {
         console.log('incorrect username or password');
         res.render('sessions/new');
       } else {
+        console.log('logged in?')
         req.session.save()
         req.session.user = user;
         console.log(user)
-        res.redirect('calendar');
+        res.redirect('calendar', { layout: '/layoutCalendarPage' });
       }
     })
   },
