@@ -1,7 +1,7 @@
 var User = require('../models/user');
 const { Pool } = require('pg')
 const pool = new Pool({
-
+  
   user: 'rosie.waite',
   host: 'localhost',
   database: 'planet',
@@ -28,7 +28,7 @@ var SessionsController = {
         req.session.save()
         req.session.user = user;
         console.log(user)
-        res.redirect('calendar', { layout: '/layoutCalendarPage' });
+        res.render('calendar', { layout: '/layoutCalendarPage' });
       }
     })
   },
@@ -38,7 +38,7 @@ var SessionsController = {
     if (req.session.user && req.cookies.user_sid) { 
       res.clearCookie('user_sid');
     }
-    res.redirect('/home/index');
+    res.redirect('sessions/new');
   }
 };
 

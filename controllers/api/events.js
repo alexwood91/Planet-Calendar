@@ -7,15 +7,13 @@ const pool = new Pool({
   port: 5432
 })
 
-const sql = "SELECT startdate FROM events"
-var Event = require ('../../models/event');
+const sql = 'SELECT startdate FROM events'
 
 var EventsApi = {
   Index: function(req, res) {
     pool.connect()
     pool.query(sql, function(err, result) {
       if (err) { throw err; }
-
       res.json({ events: result})
     });
   }
