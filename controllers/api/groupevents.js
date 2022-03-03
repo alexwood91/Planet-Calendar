@@ -1,6 +1,6 @@
 const { Pool } = require('pg')
 const pool = new Pool({
-  user: 'rosie.waite',
+  user: 'alex.wood',
   host: 'localhost',
   database: 'planet',
   password: 'password',
@@ -12,7 +12,7 @@ var GroupEventsApi = {
     pool.connect()
     pool.query(sql, function(err, result) {
       if (err) { throw err; }
-      res.json({ events: result})
+      res.json({ events: result, usercolor: req.session.user.usercolor })
     });
   }
 };
