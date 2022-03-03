@@ -7,7 +7,8 @@
   <title>Planet Calendar</title>
 </head>
 
-<body onload="initCalendar()">
+<body style="—event-colour: red;" onload="initCalendar()">
+
 
 
 <div id="container">
@@ -29,10 +30,45 @@
         <div>Sunday</div>
       </div>
 
-<a href="events/new">
+
   <div id="calendar"></div>
 </div>
-</a>
+
+  <div id="newEventModal">
+      <h2>New Event</h2>
+      <form id="new-event-form" action="/events/new" method="post">
+  <label for="eventname">Event name: </label>
+  <input id="eventname" type="text" name="eventname" value="">
+  <br>
+  <label for="description">Description: </label>
+  <input id="description" type="text" name="description" value="">
+  <br>
+  <label for="startdate">Starts: </label>
+  <input id="startdate" type="date" name="startdate" value="">
+  <br>
+  <label for="enddate">Ends: </label>
+  <input id="enddate" type="date" name="enddate" value="">
+  <label for="privateevent">Private? </label>
+  <input id="privateevent" type="checkbox" name="privateevent">
+  <br><br>
+  <input style="padding: 6px; font:small-caps; background-color: #d056db; border-radius: 8px;" id="saveButton"
+  type="submit" value="Add Event">
+  <br>
+      <button style="padding: 6px; font:small-caps; background-color: #d056db; border-radius: 8px;" id="cancelButton">Cancel</button>
+    </div>
+
+    <div id="deleteEventModal">
+      <h2>Event</h2>
+      
+
+      <p id="eventText"></p>
+
+      <button id="deleteButton">Delete</button>
+      <button id="closeButton">Close</button>
+    </div>
+
+    <div id="modalBackDrop"></div>
+
 
 
     <script src="./calendar.js"></script>

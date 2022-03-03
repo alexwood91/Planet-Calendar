@@ -4,6 +4,8 @@
   "description": "**Planet Calendar Project**",
   "main": "app.js",
   "dependencies": {
+    "@dicebear/avatars": "^4.10.2",
+    "@dicebear/avatars-initials-sprites": "^4.10.2",
     "cookie-parser": "^1.4.6",
     "cypress": "^9.4.1",
     "express": "^4.17.3",
@@ -34,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/alexwood91/Planet-Calendar/issues"
   },
-  "homepage": "https://github.com/alexwood91/Planet-Calendar#readme"
+  "homepage": "https://github.com/alexwood91/Planet-Calendar#readme",
+  "devDependencies": {
+    "handlebars-helper-css": "^0.1.0"
+  }
 }

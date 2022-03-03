@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="stylesheets/calendar.css">
+  <link rel="icon" href="../public/images/planeticon.ico" type="image/x-icon" />
    <link rel='stylesheet' href='/stylesheets/stylesheet.css'/>
   <title>Planet</title>
 </head>
@@ -13,13 +14,17 @@
   <div class='navbar' id='myNavbar'>
       <a class='active' href='/calendar'>My Planet</a>
       <a href='calendar/groupcal'>My Galaxy</a>
+      <a href='/events/new'>Add Event</a>
       <form action='/sessions?_method=DELETE' method='GET'>
         <button type='submit' value='Log Out' class='link-button'>Log Out</button>
       </form>
+
       <a href='javascript:void(0);' class='icon' onclick='myFunction()'>
         <i class='fa fa-bars'></i>
       </a>
+      <a class='avatar' style="float: right">{{avatar}}</a>
     </div>
+  
 
      {{{body}}}
 

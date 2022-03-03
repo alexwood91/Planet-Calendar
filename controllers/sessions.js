@@ -2,7 +2,7 @@ var User = require('../models/user');
 const { Pool } = require('pg')
 const pool = new Pool({
   
-  user: 'rosie.waite',
+  user: 'jackie.benn',
   host: 'localhost',
   database: 'planet',
   password: 'password',
@@ -28,7 +28,7 @@ var SessionsController = {
         req.session.save()
         req.session.user = user;
         console.log(user)
-        res.render('calendar', { layout: '/layoutCalendarPage' });
+        res.render('calendar', { layout: '/layoutCalendarPage', avatar: user.nickname });
       }
     })
   },

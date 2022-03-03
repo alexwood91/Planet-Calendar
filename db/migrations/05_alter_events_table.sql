@@ -1,1 +1,1 @@
-ALTER TABLE events ADD eventuser VARCHAR(100);
+ALTER TABLE events ADD eventuser INT;
