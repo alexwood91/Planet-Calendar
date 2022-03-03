@@ -1,8 +1,39 @@
 let nav = 0;
 let clicked = null;
 var eventDays = [];
-const calendar = document.getElementById('calendar')
+const calendar = document.getElementById('calendar');
+const newEventModal = document.getElementById('newEventModal');
+const deleteEventModal = document.getElementById('deleteEventModal');
+const backDrop = document.getElementById('modalBackDrop');
+const eventTitleInput = document.getElementById('eventTitleInput');
 const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
+function openModal(date) {
+  
+  clicked = date;
+  const eventForDay = false;
+
+  if (eventForDay) {
+    document.getElementById('eventText').innerText = eventForDay.title;
+    deleteEventModal.style.display = 'block';
+  } else {
+    newEventModal.style.display = 'block';
+  }
+
+  backDrop.style.display = 'block';
+}
+
+function closeModal() {
+  eventTitleInput.classList.remove('error');
+  newEventModal.style.display = 'none';
+  deleteEventModal.style.display = 'none';
+  backDrop.style.display = 'none';
+  eventTitleInput.value = '';
+  clicked = null;
+  initCalendar();
+}
+
+
 
 function initCalendar(){
   fetch('/api/events').then(function(response) {
@@ -45,19 +76,18 @@ function initCalendar(){
     daySquare.classList.add('day');
 
     const n = i - padDays
-    const twoDigDay = ("0" + (date.getDate() + n - 2)).slice(-2)
+    const twoDigDay = ("0" + (date.getDate() + n - 3)).slice(-2)
     const twoDigMonth = ("0" + (date.getMonth() + 1)).slice(-2)
 
     const dayString = `${year}-${twoDigMonth}-${twoDigDay}`;
-    console.log(dayString)
     const eventString = JSON.stringify(eventDays)
     const eventForDay = eventString.includes(dayString)
-    console.log(eventForDay)
+    
 
 
     if (i > padDays) {
       daySquare.innerText = i - padDays;
-      daySquare.addEventListener('click', () => daySquare.classList.add('clicked'));
+      daySquare.addEventListener('click', () => openModal(dayString));
     } if (eventForDay) {
       daySquare.classList.add('event')
     }    
@@ -80,6 +110,8 @@ function initButtons(){
     nav--;
     initCalendar();
   });
+  document.getElementById('saveButton').addEventListener('click', closeModal);
+  document.getElementById('cancelButton').addEventListener('click', closeModal);
+  document.getElementById('closeButton').addEventListener('click', closeModal);
 }
 initButtons();
-/*initCalendar();*/
