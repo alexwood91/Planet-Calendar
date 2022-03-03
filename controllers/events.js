@@ -1,9 +1,8 @@
 const Event = require('../models/event',)
 const { Pool } = require('pg');
-const { events } = require('../../acebook-team-flamingo/models/post');
 const pool = new Pool({
   
-  user: 'jackie.benn',
+  user: 'alex.wood',
   host: 'localhost',
   database: 'planet',
   password: 'password',
