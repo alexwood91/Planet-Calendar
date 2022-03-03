@@ -1,6 +1,25 @@
 const Event = require('../models/event',)
+const { Pool } = require('pg');
+const { events } = require('../../acebook-team-flamingo/models/post');
+const pool = new Pool({
+  
+  user: 'jackie.benn',
+  host: 'localhost',
+  database: 'planet',
+  password: 'password',
+  port: 5432
+})
 
 var EventsController = {
+
+  // Index: function(req, res) {
+  //   (event) => {
+  //   events = Event.all();
+  //   console.log(events)
+  // }
+  // res.render('calendar', { layout: '/layoutCalendarPage', eventuser: this.eventuser });
+  // },
+
   New: function(req, res) {
     res.render('events/new');
   },
@@ -16,6 +35,18 @@ var EventsController = {
     event.save()
     res.status(201).redirect('/calendar');
   },
+
+    Index: function(req, res) {
+      pool.connect()
+      return pool.query('SELECT nickname, usercolor, eventname FROM events JOIN users ON eventuser=users.id;').then(function(result) {
+      var event = result.rows[0]                        
+      console.log(event)
+      var eventname = event.eventname
+      console.log(eventname)
+      var usercolor = user.usercolor
+      res.render('events/index', { event: eventname, color: usercolor } );
+    });
+    }
 }
     
 module.exports = EventsController;

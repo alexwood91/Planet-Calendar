@@ -12,12 +12,14 @@ var HomeController = {
     this.password = req.body.password,
     this.nickname = req.body.nickname,
     this.dob = req.body.dob,
-    this.galaxies = req.body.galaxies
+    this.galaxies = req.body.galaxies,
+    this.usercolor = req.body.usercolor
     );
     console.log('hello')
     user.save()
 
     res.status(201).redirect('/calendar');
   },
+}
 
 module.exports = HomeController;

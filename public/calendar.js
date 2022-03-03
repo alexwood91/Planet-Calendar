@@ -42,7 +42,7 @@ function initCalendar(){
     console.log(json)
     var datepair = json.events.rows;
     eventDays.push.apply(eventDays, datepair);
-    render();
+    render(json.usercolor);
   });
   const date = new Date();
 
@@ -70,9 +70,10 @@ function initCalendar(){
 
   calendar.innerHTML = '';
 
-  function render(){
+  function render(usercolor){
   for(let i = 1; i <= padDays + daysInMonth; i++){
     const daySquare = document.createElement('div');
+    daySquare.style.backgroundColor = usercolor
     daySquare.classList.add('day');
 
     const n = i - padDays

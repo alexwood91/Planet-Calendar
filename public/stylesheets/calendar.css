@@ -79,7 +79,7 @@ body {
 
 .event {
   cursor: default !important;
-  background-color: #a33bed !important;
+  /* background-color: #a33bed !important; */
   box-shadow: none !important;
 }
 

@@ -14,7 +14,7 @@
   <div class='navbar' id='myNavbar'>
       <a class='active' href='/sessions/new'>My Planet</a>
       <a href='/calendar'>My Galaxy</a>
-      <a href='/home/index'>Sign Up</a>
+      <a href='/events/new'>Add Event</a>
       <form action='/sessions?_method=DELETE' method='GET'>
         <button type='submit' value='Log Out' class='link-button'>Log Out</button>
       </form>
@@ -37,26 +37,6 @@
         x.className = 'navbar';
         }
       }
-
-      {{!-- let name = document.querySelector('firstname')
-      let img = document.querySelector('img')
-      let btn = document.querySelector('btn')
-
-      btn.onclick = async (e)=> {
-        e.preventDefault();
-
-        let res.await fetch('/', {
-          method="post", 
-          headers: {
-            content-type: 'application/json'
-          },
-          body: JSON.stringify({name: firstname.value})
-        })
-        let data = await res.json();
-        console.log(data)
-      } --}}
-
-      
     </script>
 
   

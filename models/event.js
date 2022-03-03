@@ -1,5 +1,6 @@
 const { Pool } = require('pg')
 const pool = new Pool({
+
   user: 'alex.wood',
   host: 'localhost',
   database: 'planet',
@@ -8,7 +9,7 @@ const pool = new Pool({
 })
 
 class Event {
-  constructor(eventname, description, startdate, enddate, privateevent, eventuser ){
+  constructor(eventname, description, startdate, enddate, privateevent, eventuser){
     this.eventname = eventname
     this.description = description
     this.startdate = startdate
@@ -23,6 +24,13 @@ class Event {
   list(){
   pool.connect()
   }
+
+  static all(){
+    pool.connect()
+      return pool.query('SELECT * FROM events;').then(function(result) {
+        return result
+      })
+      }
 }
 
 module.exports = Event

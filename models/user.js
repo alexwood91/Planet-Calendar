@@ -1,5 +1,6 @@
 const { Pool } = require('pg')
 const pool = new Pool({
+
   user: 'alex.wood',
   host: 'localhost',
   database: 'planet',
@@ -8,7 +9,7 @@ const pool = new Pool({
 })
 
 class User {
-  constructor(firstname, surname, email, password, nickname, dob, galaxies ){
+  constructor(firstname, surname, email, password, nickname, dob, galaxies, usercolor){
     this.firstname = firstname
     this.surname = surname
     this.email = email
@@ -16,15 +17,17 @@ class User {
     this.nickname = nickname
     this.dob = dob
     this.galaxies = galaxies
+    this.usercolor = usercolor
   }
   save(){
   pool.connect()
-    pool.query('INSERT INTO users (firstname, surname, email, password, nickname, dob, galaxies) VALUES ($1, $2, $3, $4, $5, $6, $7);', [this.firstname, this.surname, this.email, this.password, this.nickname, this.dob, this.galaxies])
+    pool.query('INSERT INTO users (firstname, surname, email, password, nickname, dob, galaxies, usercolor) VALUES ($1, $2, $3, $4, $5, $6, $7, $8 );', [this.firstname, this.surname, this.email, 
+      this.password, this.nickname, this.dob, this.galaxies, this.usercolor])
   }
 
   static find(email){
     pool.connect()
-      return pool.query(`SELECT id, email, password, nickname FROM users WHERE email = '${email}';`).then(function(result) {
+      return pool.query(`SELECT id, email, password, nickname, usercolor FROM users WHERE email = '${email}';`).then(function(result) {
         return result.rows[0]
 
       })
