@@ -17,15 +17,6 @@ var EventsApi = {
       res.json({ events: result})
     });
   },
-
-  Full: function(req, res) {
-    const sql = 'SELECT * FROM events'
-    pool.connect()
-    pool.query(sql, function(err, result) {
-      if (err) { throw err; }
-      res.json({ events: result})
-    });
-  }
 };
 
 module.exports = EventsApi;
