@@ -2,7 +2,7 @@ const Event = require('../models/event',)
 const { Pool } = require('pg');
 const pool = new Pool({
   
-  user: 'alex.wood',
+  user: 'rosie.waite',
   host: 'localhost',
   database: 'planet',
   password: 'password',
@@ -38,13 +38,14 @@ var EventsController = {
 
     Index: function(req, res) {
       pool.connect()
-      return pool.query('SELECT nickname, usercolor, eventname FROM events JOIN users ON eventuser=users.id;').then(function(result) {
-      var event = result.rows[0]                        
+      return pool.query('SELECT nickname, usercolor, eventname, startdate, description FROM events JOIN users ON eventuser=users.id;').then(function(result) {
+      var event = result.rows                       
       console.log(event)
       var eventname = event.eventname
-      console.log(eventname)
-      var usercolor = user.usercolor
-      res.render('events/index', { event: eventname, color: usercolor } );
+       var eventdate = event.startdate.toLocaleDateString('en-GB')
+       console.log(eventdate)
+      var usercolor = event.usercolor
+      res.render('events/index', { event: event, eventname: eventname, description: event.description, color: usercolor } );
     });
     }
 }

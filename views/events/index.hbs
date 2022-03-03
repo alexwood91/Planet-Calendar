@@ -1,7 +1,10 @@
-<h1>HELLO</h1>
-
-
-    <b>{{event}}</b>
+  {{#each event}}
+  <div id="container">  
+    <div><h2>{{eventname}}</h2></b></div>
+     <div> {{description}}<br><br> </div>
+   <div>{{eventdate}}<br></div>
+    </div>
+    {{/each}}
 
 
 
