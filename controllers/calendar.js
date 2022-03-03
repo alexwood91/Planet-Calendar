@@ -5,13 +5,15 @@ var CalendarController = {
     newEvent = new Event()
     newEvent.list()
     someString = 'these are some words'
-    res.render('calendar', { title: 'Planet' , eventslist: someString, layout: '/layoutCalendarPage' });
+    var user = req.session.user;
+    res.render('calendar', { title: 'Planet' , eventslist: someString, layout: '/layoutCalendarPage', avatar: user.nickname });
   },
   Groupcal: function(req, res) {
     newEvent = new Event()
     newEvent.list()
     someString = 'these are some words'
-    res.render('groupcal', { title: 'Planet' , eventslist: someString, layout: '/layoutCalendarPage' });
+    var user = req.session.user;
+    res.render('groupcal', { title: 'Planet' , eventslist: someString, layout: '/layoutCalendarPage', avatar: user.nickname });
   }
 };
 
