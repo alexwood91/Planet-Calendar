@@ -9,6 +9,7 @@ const pool = new Pool({
 })
 
 class User {
+
   constructor(firstname, surname, email, password, nickname, dob, galaxies, usercolor){
     this.firstname = firstname
     this.surname = surname
@@ -27,7 +28,7 @@ class User {
 
   static find(email){
     pool.connect()
-      return pool.query(`SELECT id, email, password, nickname, usercolor FROM users WHERE email = '${email}';`).then(function(result) {
+      return pool.query(`SELECT id, email, password, galaxies, nickname, usercolor FROM users WHERE email = '${email}';`).then(function(result) {
         return result.rows[0]
 
       })
