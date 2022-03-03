@@ -1,6 +1,7 @@
 const { Pool } = require('pg')
 const pool = new Pool({
-  user: 'jackie.benn',
+
+  user: 'alex.wood',
   host: 'localhost',
   database: 'planet',
   password: 'password',
@@ -16,7 +17,7 @@ var EventsApi = {
       if (err) { throw err; }
       res.json({ events: result, usercolor: req.session.user.usercolor })
     });
-  }
+  },
 };
 
 module.exports = EventsApi;
